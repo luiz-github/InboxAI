@@ -1,0 +1,13 @@
+# Ambiente virtual
+venv/
+.venv/
+
+# Variáveis de ambiente
+dotenv/.env
+
+# Pycache
+__pycache__/
+*.py[cod]
+
+# Outros
+*.log
