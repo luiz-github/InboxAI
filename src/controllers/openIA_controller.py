@@ -1,4 +1,4 @@
-from services.OpenIA_service import OpenIAService
+from services.openIA_service import OpenIAService
 
 class OpenIAController:
     def __init__(self):

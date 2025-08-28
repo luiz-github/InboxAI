@@ -1,6 +1,5 @@
 from fastapi import APIRouter
 from controllers.openIA_controller import OpenIAController
-from pydantic import BaseModel
 from dto.promptRequest_dto import PromptRequest
 
 router = APIRouter()
