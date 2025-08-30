@@ -1,10 +1,10 @@
-from services.openIA_service import OpenIAService
+from services.metaIA_service import MetaIAService
 from starlette.responses import JSONResponse
 
-class OpenIAController:
+class MetaIAController:
     def __init__(self):
-        self.openIA_service = OpenIAService()
+        self.metaIA_service = MetaIAService()
 
     async def get_apiResponse(self, prompt: str):
-        response = await self.openIA_service.get_apiResponse(prompt)
+        response = await self.metaIA_service.get_apiResponse(prompt)
         return JSONResponse(status_code=response["stat_code"], content=response)
