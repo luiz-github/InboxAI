@@ -3,7 +3,7 @@ venv/
 .venv/
 
 # Variáveis de ambiente
-dotenv/.env
+.env
 
 # Pycache
 __pycache__/
@@ -11,3 +11,4 @@ __pycache__/
 
 # Outros
 *.log
+.idea/
