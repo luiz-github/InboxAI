@@ -1,7 +1,7 @@
 import http
 
 from fastapi import UploadFile
-from services.openIA_service import OpenIAService
+from services.metaIA_service import MetaIAService
 from helpers.generic_helper import APIResponse, api_response
 import pypdf
 from io import BytesIO
@@ -9,7 +9,7 @@ from io import BytesIO
 
 class FileService:
     def __init__(self):
-        self.openIA_service = OpenIAService()
+        self.metaIA_service = MetaIAService()
         self.handlers = {
             ".txt": self._process_txt,
             ".pdf": self._process_pdf,
@@ -40,5 +40,5 @@ class FileService:
         return " ".join(page.extract_text() or "" for page in reader.pages)
 
     async def _process_with_gemini(self, text: str) -> APIResponse:
-        response = await self.openIA_service.get_apiResponse(text)
+        response = await self.metaIA_service.get_apiResponse(text)
         return api_response(http.HTTPStatus.OK, "Read successfully", response.get("data"))
