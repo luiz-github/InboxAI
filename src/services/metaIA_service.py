@@ -11,7 +11,7 @@ import requests
 
 load_dotenv()
 
-class OpenIAService:
+class MetaIAService:
     def __init__(self):
         self.API_KEY = os.getenv("API_KEY")
         self.BASE_URL = os.getenv("BASE_URL")

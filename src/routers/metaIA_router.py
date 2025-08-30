@@ -1,9 +1,9 @@
 from fastapi import APIRouter
-from controllers.openIA_controller import OpenIAController
+from controllers.metaIA_controller import MetaIAController
 from dto.promptRequest_dto import PromptRequest
 
 router = APIRouter()
-openIA_controller = OpenIAController()
+openIA_controller = MetaIAController()
 
 @router.post("/generateEmailResponse")
 async def generate_emailResponse(request: PromptRequest):
