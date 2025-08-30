@@ -9,7 +9,7 @@ def api_response(code: int, message: str, data: Optional[Any] = None)-> APIRespo
     if data is None:
         return {
             "stat_code": code,
-            "message": message,
+            "message": message
         }
     else:
         return {

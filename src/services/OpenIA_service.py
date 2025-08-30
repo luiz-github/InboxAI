@@ -9,7 +9,7 @@ from dto.promptRequest_dto import PromptRequest
 from dotenv import load_dotenv
 import requests
 
-load_dotenv(dotenv_path="dotenv/.env")
+load_dotenv()
 
 class OpenIAService:
     def __init__(self):
@@ -39,4 +39,4 @@ class OpenIAService:
             response = json.loads(re.sub(r"```json\n([\s\S]+?)\n```", r"\1", raw_text).strip())
             return api_response(http.HTTPStatus.OK, "Success", response)
         except Exception as e:
-            return api_response(http.HTTPStatus.OK, str(e))
+            return api_response(http.HTTPStatus.BAD_REQUEST, str(e))
