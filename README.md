@@ -2,6 +2,10 @@
 ### Descrição:
 Uma aplicação web que utiliza inteligência artificial para classificar emails e sugerir respostas automáticas, economizando tempo da equipe e automatizando processos repetitivos.
 
+### Requisitos:
+- python3
+- Node.js:22
+
 ### Stack: 
 - FastAPI
 - React.js
