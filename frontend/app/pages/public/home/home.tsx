@@ -5,7 +5,7 @@ import {useState, useRef} from "react";
 
 export function Home() {
     const [inputValue, setInputValue] = useState('');
-    const [emailSugestion, setEmailSugestion] = useState<{ resposta: string } | null>(null);
+    const [response, setResponse] = useState<{ categoria: string; resposta: string } | null>(null);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
     const [loading, setLoading] = useState(false);
 
@@ -13,7 +13,7 @@ export function Home() {
     const handleGenerate = () => {
         setLoading(true);
         sugestEmailResponse({ emailBody: inputValue })
-            .then(resposta => setEmailSugestion(resposta))
+            .then(resposta => setResponse(resposta))
             .then(() => setInputValue(''))
             .catch(err => console.log(err))
             .finally(() => setLoading(false));
@@ -34,24 +34,31 @@ export function Home() {
             const data = await sendFile(file)
             setLoading(false);
             if (!data.resposta) {
-                setEmailSugestion({ resposta: "Erro ao processar arquivo" })
+                setResponse({ categoria: "", resposta: "Erro ao processar arquivo" })
             }
-            setEmailSugestion(data)
+            setResponse(data)
         } catch (err: any) {
             console.log(err)
-            setEmailSugestion({ resposta: "Erro ao processar arquivo" })
+            setResponse({ categoria: "", resposta: "Erro ao processar arquivo" })
         }
     };
 
   return (
       <section className="flex flex-col justify-center items-center h-screen space-y-4">
-          {loading ? (
-              <p className="max-w-2xl p-4 text-white text-center">Carregando...</p>
-          ) : emailSugestion?.resposta && (
-              <p className="max-w-2xl p-4 text-white whitespace-pre-line">
-                  {emailSugestion.resposta}
-              </p>
-          )}
+        {loading ? (
+        <p className="max-w-2xl p-4 text-white text-center">Carregando...</p>
+        ) : response?.resposta && (
+        <div className="max-h-96 overflow-auto">
+            {response.categoria && (
+            <p className="max-w-2xl p-4 text-yellow-500 whitespace-pre-line">
+                🔖{response.categoria}
+            </p>
+            )}
+            <p className="max-w-2xl p-4 text-white whitespace-pre-line">
+            {response.resposta}
+            </p>
+        </div>
+        )}
 
           <div className="flex flex-col w-full max-w-2xl rounded-2xl border border-gray-700 bg-gray-900 px-4 py-4 space-y-4">
               <div className="flex items-center w-full rounded-xl bg-gray-800 px-3 py-2">
