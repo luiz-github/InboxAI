@@ -1,0 +1,66 @@
+# InboxIA
+### Descrição:
+Uma aplicação web que utiliza inteligência artificial para classificar emails e sugerir respostas automáticas, economizando tempo da equipe e automatizando processos repetitivos.
+
+### Stack: 
+- FastAPI
+- React.js
+- Vite
+
+# Backend:
+## Rotas da API
+
+#### Gerar resposta via texto
+- **`POST`** "/api/generateEmailResponse"<br>
+    - **Descrição:** Gera resposta para um input de texto.
+    - **Parametros (Body JSON):**
+        - prompt: texto do email
+      #### Exemplo:
+        ``` bash
+        {
+            "prompt": "email"
+        }
+        ```
+
+#### Gerar resposta via arquivo
+- **`POST`** "/api/processFileToPrompt"<br>
+    - **Descrição:** Gera resposta para um arquivo.
+    - **Tipos de arquivo:** .pdf ou .txt
+    - **Parametros (Body multipart/form-data):**
+        - file: arquivo a ser processado
+
+#### Documentação (swagger)
+- **`GET`** "/docs"<br>
+    - **Descrição:** Documentação da API via swagger.
+
+## Como executar:
+``` bash
+git clone https://github.com/luiz-github/InboxAI
+
+cd .\InboxAI\backend\
+
+py -m venv venv
+
+.\venv\Scripts\activate
+
+pip install -r requirements.txt
+
+fastapi run main.py
+```
+
+## Frontend:
+## Interface:
+![Interface](assets/homePageLayout.png)
+- Exemplo de saida:<br>
+![Padrão de resposta](assets/responseExemple.png)
+
+## Como executar:
+``` bash
+git clone https://github.com/luiz-github/InboxAI
+
+cd .\InboxAI\frontend\
+
+npm i
+
+npm run dev
+```
