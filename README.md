@@ -38,6 +38,7 @@ Uma aplicação web que utiliza inteligência artificial para classificar emails
     - **Descrição:** Documentação da API via swagger.
 
 ## Como executar:
+- Setup
 ``` bash
 git clone https://github.com/luiz-github/InboxAI
 
@@ -49,6 +50,16 @@ py -m venv venv
 
 pip install -r requirements.txt
 
+```
+- Criar arquivo .env em ./InboxIA/backend
+
+``` bash
+API_KEY=CHANGE-ME
+BASE_URL=CHANGE-ME
+```
+
+- Executar
+``` bash
 fastapi run main.py
 ```
 
@@ -59,12 +70,21 @@ fastapi run main.py
 ![Padrão de resposta](assets/responseExemple.png)
 
 ## Como executar:
+- Setup
 ``` bash
 git clone https://github.com/luiz-github/InboxAI
 
 cd .\InboxAI\frontend\
 
 npm i
+```
 
+- Criar arquivo .env em ./InboxIA/frontend
+``` bash
+VITE_BASE_URL=CHANGE-ME
+```
+
+- Executar
+``` bash
 npm run dev
 ```
