@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from controllers.metaIA_controller import MetaIAController
-from dto.promptRequest_dto import PromptRequest
+from src.controllers.metaIA_controller import MetaIAController
+from src.dto.promptRequest_dto import PromptRequest
 
 router = APIRouter()
 openIA_controller = MetaIAController()

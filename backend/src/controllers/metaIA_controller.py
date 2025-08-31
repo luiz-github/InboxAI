@@ -1,4 +1,4 @@
-from services.metaIA_service import MetaIAService
+from src.services.metaIA_service import MetaIAService
 from starlette.responses import JSONResponse
 
 class MetaIAController:

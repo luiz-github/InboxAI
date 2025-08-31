@@ -1,4 +1,4 @@
-from services.file_service import FileService
+from src.services.file_service import FileService
 from starlette.responses import JSONResponse
 
 class UploadController:

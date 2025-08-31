@@ -2,10 +2,10 @@ import http
 import json
 import os
 import re
-from helpers.generic_helper import APIResponse, api_response
-from helpers.preprocess_helper import preprocess_text
-from helpers.prompt_helper import prompt_template
-from dto.promptRequest_dto import PromptRequest
+from src.helpers.generic_helper import APIResponse, api_response
+from src.helpers.preprocess_helper import preprocess_text
+from src.helpers.prompt_helper import prompt_template
+from src.dto.promptRequest_dto import PromptRequest
 from dotenv import load_dotenv
 import requests
 

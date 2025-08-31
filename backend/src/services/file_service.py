@@ -1,8 +1,8 @@
 import http
 
 from fastapi import UploadFile
-from services.metaIA_service import MetaIAService
-from helpers.generic_helper import APIResponse, api_response
+from src.services.metaIA_service import MetaIAService
+from src.helpers.generic_helper import APIResponse, api_response
 import pypdf
 from io import BytesIO
 

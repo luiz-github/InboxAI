@@ -1,4 +1,4 @@
-from controllers.upload_controller import UploadController
+from src.controllers.upload_controller import UploadController
 from fastapi import APIRouter, UploadFile
 
 router = APIRouter()
